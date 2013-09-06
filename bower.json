@@ -1,0 +1,11 @@
+{
+  "name": "webexpo-challenge",
+  "version": "0.1.0",
+  "dependencies": {
+    "bootstrap": "~3.0.0",
+    "requirejs": "~2.1.8",
+    "jquery": "~1.10.2",
+    "emerald": "~0.3.0"
+  },
+  "devDependencies": {}
+}
