@@ -288,7 +288,7 @@ module.exports = function (grunt) {
         },
         concurrent: {
             server: [
-                'less',
+                'less:server',
                 'coffee:dist',
                 'copy:styles'
             ],
@@ -298,7 +298,7 @@ module.exports = function (grunt) {
             ],
             dist: [
                 'coffee',
-                'less',
+                'less:dist',
                 'copy:styles',
                 'imagemin',
                 'svgmin',

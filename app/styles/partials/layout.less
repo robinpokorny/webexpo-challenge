@@ -1,32 +1,24 @@
-/* Space out content a bit */
-body {
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
 /* Custom page header */
 .header {
+    margin-top: 20px;
     border-bottom: 1px solid #e5e5e5;
+}
+
+.nav > li > a {
+    padding: 8px 12px;
 }
 
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-top: 10px;
+    margin-bottom: 30px;
     line-height: 40px;
     padding-bottom: 19px;
 }
 
 /* Custom page footer */
 .footer {
+    margin-bottom: 20px;
     padding-top: 19px;
     color: #777;
     border-top: 1px solid #e5e5e5;
@@ -45,6 +37,7 @@ body {
 .jumbotron .btn {
     font-size: 21px;
     padding: 14px 24px;
+        border-bottom: 0;
 }
 
 /* Supporting marketing content */
@@ -58,23 +51,20 @@ body {
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
-    .container {
-        max-width: 730px;
+    body {
+        // http://subtlepatterns.com/p1/
+        background: #eee url('/images/p1.png');
     }
 
-    /* Remove the padding we set earlier */
-    .header,
-    .marketing,
-    .footer {
-        padding-left: 0;
-        padding-right: 0;
-    }
-    /* Space out the masthead */
-    .header {
-        margin-bottom: 30px;
-    }
-    /* Remove the bottom border on the jumbotron for visual effect */
-    .jumbotron {
-        border-bottom: 0;
+    .page {
+        width: 320px;
+        height: 588px;
+        margin: 30px auto;
+        padding: 0;
+        background: #fff;
+        border: 1px solid #666;
+        border-top: 10px solid #666;
+        border-bottom: 10px solid #666;
+        overflow: auto;
     }
 }
