@@ -1,0 +1,60 @@
+
+.detail {
+    padding: (@column-width / 2) 0;
+    h3 {
+        margin: 0;
+        color: #fff;
+        font-size: 13px;
+    }
+    h4 {
+        margin: 0;
+        color: #000;
+        font-size: 13px;
+    }
+    &--dev {
+        background: #00A06D;
+    }
+    &__icon {
+        font-size: 18px;
+        color: #000;
+    }
+}
+
+// Border progress
+@border-progress-size: 54px; // = e-2
+@border-progress-thick: 4px;
+.border-progress {
+    position: relative;
+    width: @border-progress-size;
+    height: @border-progress-size;
+    &__background {
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: @border-progress-size;
+        height: @border-progress-size;
+        border-radius: 50%;
+        border: @border-progress-thick solid #ccc;
+    }
+    &__bar {
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: @border-progress-size;
+        overflow: hidden;
+        z-index: 10;
+        transform-origin: (@border-progress-size / 2) (@border-progress-size / 2);
+        -webkit-transform-origin: (@border-progress-size / 2) (@border-progress-size / 2);
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            width: @border-progress-size;
+            height: @border-progress-size;
+            border: @border-progress-thick solid #000;
+            border-radius: 50%;
+        }
+    }
+}

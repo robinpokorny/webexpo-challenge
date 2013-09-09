@@ -55,7 +55,7 @@ module.exports = function (grunt) {
                 port: 9000,
                 livereload: 35729,
                 // change this to '0.0.0.0' to access the server from outside
-                hostname: 'localhost'
+                hostname: '0.0.0.0'
             },
             livereload: {
                 options: {
@@ -274,8 +274,14 @@ module.exports = function (grunt) {
                         '*.{ico,png,txt}',
                         '.htaccess',
                         'images/{,*/}*.{webp,gif}',
-                        'styles/fonts/{,*/}*.*'
                     ]
+                },
+                {
+                    expand: true,
+                    dot: true,
+                    cwd: '<%= yeoman.app %>/bower_components/bootstrap/fonts/',
+                    dest: '<%= yeoman.dist %>/fonts',
+                    src: '{,*/}*.*'
                 }]
             },
             styles: {
@@ -284,22 +290,32 @@ module.exports = function (grunt) {
                 cwd: '<%= yeoman.app %>/styles',
                 dest: '.tmp/styles/',
                 src: '{,*/}*.css'
+            },
+            fonts: {
+                expand: true,
+                dot: true,
+                cwd: '<%= yeoman.app %>/bower_components/bootstrap/fonts/',
+                dest: '.tmp/fonts/',
+                src: '{,*/}*.*'
             }
         },
         concurrent: {
             server: [
                 'less:server',
                 'coffee:dist',
-                'copy:styles'
+                'copy:styles',
+                'copy:fonts'
             ],
             test: [
                 'coffee',
-                'copy:styles'
+                'copy:styles',
+                'copy:fonts'
             ],
             dist: [
                 'coffee',
                 'less:dist',
                 'copy:styles',
+                'copy:fonts',
                 'imagemin',
                 'svgmin',
                 'htmlmin'
