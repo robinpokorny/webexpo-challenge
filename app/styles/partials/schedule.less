@@ -1,6 +1,43 @@
+.wx-dev {
+    background: #00A06D;
+}
+.wx-prod {
+    background: #FF7129;
+}
+.wx-design {
+    background: #e2589f;
+}
+.wx-service {
+    background: #ed95c2;
+}
+
+.hall {
+    margin: 18px 0 9px 0;
+    h2 {
+        margin: 0;
+        padding-left: 20px;
+        background-position: 0 50%;
+        background-repeat: no-repeat;
+        background-size: 16px 16px;
+        font-size: 16px;
+        text-transform: uppercase;
+    }
+    &--dev {
+        h2 {
+            background-image: url("../images/ico-dev.png");
+            color: #51a011;
+        }
+    }
+    &--design {
+        h2 {
+            background-image: url("../images/ico-design.png");
+            color: #ff00ff;
+        }
+    }
+}
 
 .detail {
-    padding: (@column-width / 2) 0;
+    padding: 13px 0;
     h3 {
         margin: 0;
         color: #fff;
@@ -11,12 +48,80 @@
         color: #000;
         font-size: 13px;
     }
-    &--dev {
-        background: #00A06D;
-    }
     &__icon {
         font-size: 18px;
         color: #000;
+    }
+}
+
+.blocks {
+    padding: @column-width 0;
+    overflow: hidden;
+    &__wrapper {
+        margin: 0 0 0 -75px;
+        width: 504px;
+    }
+}
+
+.block {
+    position: relative;
+    height: 54px;
+    padding: 12px 5px 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+    border-radius: 3px;
+    h3 {
+        margin: 0;
+        height: 12px;
+        color: #fff;
+        font-size: 11px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: clip;
+    }
+    h4 {
+        margin: 0;
+        height: 24px;
+        color: #000;
+        font-size: 11px;
+        overflow: hidden;
+        text-overflow: clip;
+    }
+    &.wx-dev {
+        border-color:#006d4a;
+    }
+    &.wx-prod {
+        border-color: #f55200;
+    }
+    &.wx-design {
+        border-color: #da2d86;
+    }
+    &.wx-service {
+        border-color: #e569a9;
+    }
+    &--event {
+        border: none;
+        padding: 13px 0 0 0;
+        img {
+            width: 100%;
+        }
+    }
+    &__time {
+        position: absolute;
+        top: -8px;
+        left: 5px;
+    }
+    &__star {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 12px;
+        color: #000;
+    }
+    h3&__tba {
+        color: rgba(0, 0, 0, 0.4);
+        font-style: italic;
     }
 }
 
