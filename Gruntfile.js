@@ -22,10 +22,6 @@ module.exports = function (grunt) {
     grunt.initConfig({
         yeoman: yeomanConfig,
         watch: {
-            coffee: {
-                files: ['<%= yeoman.app %>/scripts/{,*/}*.coffee'],
-                tasks: ['coffee:dist']
-            },
             coffeeTest: {
                 files: ['test/spec/{,*/}*.coffee'],
                 tasks: ['coffee:test']
@@ -115,15 +111,6 @@ module.exports = function (grunt) {
             }
         },
         coffee: {
-            dist: {
-                files: [{
-                    expand: true,
-                    cwd: '<%= yeoman.app %>/scripts',
-                    src: '{,*/}*.coffee',
-                    dest: '.tmp/scripts',
-                    ext: '.js'
-                }]
-            },
             test: {
                 files: [{
                     expand: true,
@@ -302,7 +289,6 @@ module.exports = function (grunt) {
         concurrent: {
             server: [
                 'less:server',
-                'coffee:dist',
                 'copy:styles',
                 'copy:fonts'
             ],
@@ -312,7 +298,6 @@ module.exports = function (grunt) {
                 'copy:fonts'
             ],
             dist: [
-                'coffee',
                 'less:dist',
                 'copy:styles',
                 'copy:fonts',
