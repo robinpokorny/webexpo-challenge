@@ -134,7 +134,7 @@
     position: relative;
     width: @border-progress-size;
     height: @border-progress-size;
-    &__background {
+    &__border {
         position: absolute;
         left: 0;
         right: 0;
@@ -142,6 +142,14 @@
         height: @border-progress-size;
         border-radius: 50%;
         border: @border-progress-thick solid #ccc;
+    }
+    &__background {
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: @border-progress-size;
+        height: @border-progress-size;
+        border-radius: 50%;
     }
     &__bar {
         position: absolute;
